@@ -1,0 +1,1 @@
+Phoca SEF is Joomla! CMS extension. Component which redirects obsolete sites to active sites.
