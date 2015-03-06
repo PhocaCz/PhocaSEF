@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_GB" xml:lang="en_GB">
+<head>
+<title>Phoca gallery</title>
+<link href="css/help.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+h2{color:#fc0000}
+.first{margin:0 0 0 1em}
+.second{margin:0 0 0 2em}
+.third{margin:0 0 0 3em}
+.fourth{margin:0 0 0 4em}
+</style>
+</head>
+<body>
+<h1>Phoca SEF</h1>
+<h2>Installation - important</h2>
+<p><span style="color:#990000">(1)</span>Edit the  <span style="background:#d0d0d0">libraries/joomla/error/error.php</span> file (with help of text editor), add into the "raiseError" method (row + - 169) the following code:</p>
+<div style="background:#ffffcc;border:1px solid #ffff33;padding:5px"><code>
+//PHOCAEDIT <br />
+if ($code = '404') {<br />
+   include_once( JPATH_ADMINISTRATOR.DS.'components'.DS.'com_phocasef'.DS.'helpers'.DS.'phocasef.php' );<br />  
+   PhocaSefHelper::createUrlEntry();<br />
+}<br />
+//PHOCAEDIT<br />
+</code></div>
+<p>You should paste it before:<br /><span style="background:#f0f0f0">$reference = & JError::raise(E_ERROR, $code, $msg, $info, true);</span></p>
+<p><span style="color:#990000">(2)</span> Search Engine Friendly URLs needs to be enabled in Global Configuration of Joomla!</p>
+
+<h2>Documentation - Parameters</h2>
+<h3>Enable Redirecting of sites</h3>
+<p>Links which ends with 404 Error are automatically stored in the database (if it is set in parameters). If you click on the link, you can add new link (where the site should be redirect). For successfully redirecting of the site the link must be published. Add the links in following format:</p>
+<p>http://www.phoca.cz/some-article/ ==><span style="background:#f0f0f0">some-article</span></p>
+<p>http://www.phoca.cz/index.php/some-article/ ==><span style="background:#f0f0f0">index.php/some-article</span></p>
+
+<p>It means, without <span style="background:#f0f0f0">http://</span> and without the right slash (<span style="background:#f0f0f0">/</span>)</p>
+
+<h3>Store Sites which ends with 404 Error</h3>
+<p>If yes, links which ends with 404 Error will be stored into the database. If no, links will be no more stored but the redirecting of previously added links will work.</p>
+<h3>Store Referring Sites</h3>
+<p>If yes, referring sites of links which ends with 404 Error will be stored.</p>
+<p>&nbsp;</p>
+<p>
+<a href="http://www.phoca.cz/phocasef/" target="_blank">Phoca SEF Main Site</a><br />
+<a href="http://www.phoca.cz/documentation/" target="_blank">Phoca SEF User Manual</a><br />
+<a href="http://www.phoca.cz/forum/" target="_blank">Phoca SEF Forum</a><br />
+</p>
+<p>&nbsp;</p>
+<a href="javascript:void(0);" onclick="javascript:window.close();"><span class="small">Close window</span></a>
+</body>
+</html>

@@ -1,0 +1,24 @@
+DROP TABLE IF EXISTS `#__phocasef_url`;
+CREATE TABLE `#__phocasef_url` (
+  `id` int(11) NOT NULL auto_increment,
+  `cw` int(11) NOT NULL default '0',
+  `cr` int(11) NOT NULL default '0',
+  `new_url` varchar(255) NOT NULL default '',
+  `old_url` varchar(255) NOT NULL default '',
+  `date_url` datetime NOT NULL default '0000-00-00 00:00:00',
+  `published` tinyint(1) NOT NULL default '0',
+  `ordering` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`id`)
+) TYPE=MyISAM CHARACTER SET `utf8`;
+
+DROP TABLE IF EXISTS `#__phocasef_ref`;
+CREATE TABLE `#__phocasef_ref` (
+  `id` int(11) NOT NULL auto_increment,
+  `count_url` int(11) NOT NULL default '0',
+  `ref_url` varchar(255) NOT NULL default '',
+  `ref_to_url` varchar(255) NOT NULL default '',
+  `date_url` datetime NOT NULL default '0000-00-00 00:00:00',
+  `published` tinyint(1) NOT NULL default '0',
+  `ordering` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`id`)
+) TYPE=MyISAM CHARACTER SET `utf8`;

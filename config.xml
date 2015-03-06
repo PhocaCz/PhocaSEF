@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<params>
+		<param name="enable_url" type="list" default="1" label="Enable Redirecting of Sites" description="Enable Redirect of Sites DESC">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</param>
+			
+		<param name="store_url" type="list" default="1" label="Store Redirecting Sites" description="Store Redirecting Sites DESC">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</param>
+			
+		<param name="store_ref" type="list" default="1" label="Store Referring Sites" description="Store Referring Sites DESC">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</param>
+	</params>
+</config>
